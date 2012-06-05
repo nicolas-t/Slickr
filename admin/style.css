@@ -1,0 +1,135 @@
+body{
+	margin:0;
+	background:url(images/bgad.jpg) repeat-x #fff;
+	font-family:Georgia;
+}
+a{
+color:#00a8ff;
+text-decoration:none;
+border-bottom:1px solid #fff;
+}
+a:hover{
+text-decoration:none;
+border-bottom:1px solid #A1D587;
+}
+.header{
+	font-size:55px;
+	color:#adb1b3;
+	position:relative;
+	top:14px;
+	left:10px;
+}
+.header:first-letter{
+	font-size:60px;
+}
+#content{
+border:1px solid #cee3ea;
+background:#fff;
+padding:50px;
+padding-top:25px;
+padding-bottom:35px;
+width:430px;
+position:relative;
+}
+#container{
+width:432px;
+position:absolute;
+left:50%;
+margin-left:-301px;
+top:120px;
+}
+.input{
+	background:url(images/bginut.jpg) repeat-x;
+	border:1px solid #d6d6d6;
+	font-size:36px;
+	font-family:Georgia;
+	color:#808080;
+	font-style:italic;
+	padding:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:411px;
+	-moz-border-radius:8px;
+	margin-top:8px;
+	margin-bottom:29px;
+	margin-left:-5px;
+}
+.label{
+margin-top:-3px;
+}
+.inputpetit{
+	background:url(images/bginut.jpg) repeat-x;
+	border:1px solid #d6d6d6;
+	font-size:20px;
+	font-family:Georgia;
+	color:#808080;
+	font-style:italic;
+	padding:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:300px;
+	-moz-border-radius:8px;
+	margin:8px;
+}
+.submit{
+	color:#fff;
+	width:75px;
+	padding:9px;
+	background:#a1d587;
+	border:1px solid #69ba4e;
+	font-family:Georgia;
+	font-size:16px;
+	letter-spacing:2px;
+	cursor:pointer;
+	float:right;
+	margin-right:10px;
+}
+.no {
+	background:#c8c8c8;
+	border:1px solid #9a9a9a;
+
+}
+.blue{
+	color:#00a8ff;
+	font-size:14px;
+	font-style:italic;
+}
+.gray{
+	color:#7a7a7a;
+	font-size:14px;
+	font-style:italic;
+}
+.invalid{
+padding:10px;
+margin-bottom:10px;
+background:#f7fbd3;
+text-align:center;
+font-size:12px;
+}
+textarea{
+width:90%;
+line-height:20px;
+color:gray;
+border:0;
+padding:5px;
+margin-bottom:10px;
+margin-top:10px;
+border-left:2px solid #A1D587;
+border-bottom:1px solid #A1D587;
+}
+.update{
+display:block;
+text-align:center;
+color:#fff;
+background:#A1D587;
+border:1px solid #69BA4E;
+margin:auto;
+padding:20px;
+    -moz-transition-property: background-color;
+	-moz-transition-duration: 0.5s;
+margin-bottom:25px;
+}
+.update:hover {
+background-color: #c1e9ad;
+border:1px solid #69BA4E;
+}

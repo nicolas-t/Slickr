@@ -1,0 +1,9 @@
+RewriteEngine on
+# sets : sets-14427710-72157622604175161.html
+RewriteRule ^sets-([0-9\-]+)-([0-9]+).html$   ./index.php?c_id=$1 [L]
+
+# collecs : collections-14427710-72157622604175161.html
+RewriteRule ^collections-([0-9\-]+)-([0-9]+).html$   ./index.php?b_id=$1 [L]
+
+# photos : photos-72157626077143295-1.html
+RewriteRule ^photos-([0-9]+)-([0-9]+).html   ./index.php?id=$1&p=$2 [L]
