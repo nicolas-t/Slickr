@@ -59,12 +59,12 @@ class Core
 		}
 		return $z;
 	}
-	public function createUrl($image,$size)// image' size : _z; _t; _m; _s; _c _b; _biggest; or leave empty . more infos http://www.flickr.com/services/api/misc.urls.html
+	public function createUrl($image,$size)// image' size : _z; _t; _m; _s; _b; _biggest; or leave empty
 	{
 		if(!empty($image['primary'])){$p = $image['primary'];}
 		else{$p = $image['id'];}
 
-		if($size == '_biggest'){ // slickr is slow, biggest is deprecated
+		if($size == '_biggest'){
 			$this->getFeed('imgSizes','photos.getSizes',array('photo_id' => $image['id']));
 			$imgSize = $this->imgSizes;
 			$imgSize = array_reverse($imgSize['sizes']['size']);

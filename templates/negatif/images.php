@@ -58,7 +58,7 @@
 			foreach($images as $image)
 			{
 			?>
-				<a rel="<?php echo $parent['title']; ?>" href="<?php echo $slickr->createUrl($image, '_c'); ?>" class="<?php echo $thumbClass; ?>" rev="<?php echo $image['id']; ?>" title="<?php echo $image['title']; ?>"><!-- image' size : _z; _c; _b; _biggest; (_biggest : deprecated) or leave empty more infos http://www.flickr.com/services/api/misc.urls.html -->
+				<a rel="<?php echo $parent['title']; ?>" href="<?php echo $slickr->createUrl($image, '_biggest'); ?>" class="<?php echo $thumbClass; ?>" rev="<?php echo $image['id']; ?>" title="<?php echo $image['title']; ?>"><!-- image' size : _z; _t; _m; _s; _b; _biggest; or leave empty -->
 					 <img src="<?php echo $slickr->createUrl($image, THUMBS_SIZE); ?>" alt="<?php echo $image['title']; ?>" /> 
 				</a>
 			<?php
