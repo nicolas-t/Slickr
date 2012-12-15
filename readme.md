@@ -102,8 +102,8 @@ once installed find admin panel here :
 	 <dl>
 	  <dd>`_s` : 75px*75px sqsuare</dd>
 	  <dd>`_t` : 100px on the largest side</dd>
-	  <dt>`_m` : 240px on the largest side</dt>
-	  <dt>`_z` : 640px on the largest side</dt>
+	  <dd>`_m` : 240px on the largest side</dd>
+	  <dd>`_z` : 640px on the largest side</dd>
 	  <dd>`_b` : 1 024px on the largest side</dd>
 	  <dd>`_biggest` : look for an original size if available, else takes the biggest size available</dd>
 	</dl>
