@@ -65,19 +65,19 @@ once installed find admin panel here :
 ###### Templates 
  default template is `positif`.
 
-**collecphotosets.php:**
+**collecphotosets.php:**  
  Template for the photosets inside collections
 
-**collections.php:**
+**collections.php:**  
  Template for the collections.
 
-**photosets.php:**
+**photosets.php:**  
  Template for the photosets.
 
-**images.php:**
+**images.php:**  
  Template for the images.
 
-**footer.php:**
+**footer.php:**  
  Template for the footer of every pages.
  
 ###### MVC
@@ -90,9 +90,9 @@ once installed find admin panel here :
  * `your-template/your-page.php` is your view.
  
 ###### Methods
- **$core->createUrl($image,$size) :** `params : image, size`
- Param :
- * image `array` : the image (as an array returned from the method `$slickr->getPhotos()` you want to link to.
+ **$core->createUrl($image,$size) :** `params : image, size`  
+ Param :  
+ * image `array` : the image (as an array returned from the method `$slickr->getPhotos()` you want to link to.  
  * size `string` : the size of the image:
 		* `_z` : 640px on the largest side
 		* `_t` : 100px on the largest side
@@ -101,38 +101,38 @@ once installed find admin panel here :
 		* `_b` : 1 024px on the largest side
 		* `_biggest` : look for an original size if available, else takes the biggest size available
 
- Returns :
- the url of the image
+ Returns :  
+ the url of the image  
 
 -----------
 
-**$slickr->getPhotos() :** `param : none`
- Returns :
+**$slickr->getPhotos() :** `param : none`  
+ Returns :  
  * images : the photos of the current photoset
  * parent : informations about the parent photoset (title & description)
 
-**$slickr->getLatestPhotos() :** `param : none`
- Returns :
+**$slickr->getLatestPhotos() :** `param : none`  
+ Returns :  
  * images : the latest photos you uploaded on flickr
  * parent : "Latest Images"
 
-**$slickr->getPhotosets() :** `param : none`
- Returns :
+**$slickr->getPhotosets() :** `param : none`  
+ Returns :  
  * collecSets : the different sets in the current collection
  * sets : the different sets (when the homepage is set to "Photosets"
  * parent : information about the parent collection (title)
 
-**$slickr->getCollections() :** `param : none`
- Returns :
+**$slickr->getCollections() :** `param : none`  
+ Returns :  
  * collections : the different collections (in the current collection)
  * parent : informations about the parent (if exists) collection (title & description)
 
 -----------
 
-**$cache->saveCache($content) :** `param : content`
- Save to cache the html content passed as parameter  
- return : true|false
+**$cache->saveCache($content) :** `param : content`  
+ Save to cache the html content passed as parameter    
+ return : true|false 
 
-**$cache->getCache() :** `param : none`
- Show the cached content if available  
+**$cache->getCache() :** `param : none`  
+ Show the cached content if available   
  Else start generating new cache for the page.
