@@ -89,19 +89,22 @@ once installed find admin panel here :
  
  * `your-template/your-page.php` is your view.
  
-###### Methods
+## Methods
+-----------
+
  **$core->createUrl($image,$size) :** `params : image, size`  
  Param :  
  * image `array` : the image (as an array returned from the method `$slickr->getPhotos()` you want to link to.  
  * size `string` : the size of the image:
-		* `_z` : 640px on the largest side
-		* `_t` : 100px on the largest side
-		* `_m` : 240px on the largest side
-		* `_s` : 75px*75px sqsuare
-		* `_b` : 1 024px on the largest side
-		* `_biggest` : look for an original size if available, else takes the biggest size available
-
- Returns :  
+	 <dl>
+	  <dd>`_s` : 75px*75px sqsuare</dd>
+	  <dd>`_t` : 100px on the largest side</dd>
+	  <dt>`_m` : 240px on the largest side</dt>
+	  <dt>`_z` : 640px on the largest side</dt>
+	  <dd>`_b` : 1 024px on the largest side</dd>
+	  <dd>`_biggest` : look for an original size if available, else takes the biggest size available</dd>
+	</dl>
+ Returns :    
  the url of the image  
 
 -----------
