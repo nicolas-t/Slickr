@@ -12,16 +12,16 @@ Slickr is an easy to template module that display your flickr photos on your own
 recent browsers such as :  
  IE 7+, Safari, Firefox & Chrome.
 
+ 
 #### Demo & Website
------------
  http://slickr.net/demo  
  http://slickr.net
 
+ 
 #### Notes
------------
-**cache**
- Slickr makes heavy use of cache (images are not cached).  
- You'll have to disable it from the admin panel (by setting lifespan to 0) or empty cache the folder after each modifications.  
+**cache**  
+Slickr makes heavy use of cache (images are not cached).   
+You'll have to disable it from the admin panel (by setting lifespan to 0) or empty cache the folder after each modifications.  
 
 
 ##Installation
@@ -45,17 +45,22 @@ once installed find admin panel here :
  Structure of the site depends on the homepage chose from the admin.  
 
 **Latest Upload:**
+<pre>
  Images  
+</pre>
 
 **Photosets:**
+<pre>
  Photosets  
  |--Images  
+</pre>
 
 **Collections:**
+<pre>
  Collections  
  |--Collecphotosets  
     |--Images  
-
+</pre>
 
 ###### Templates 
  default template is `positif`.
