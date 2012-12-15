@@ -25,7 +25,6 @@ You'll have to disable it from the admin panel (by setting lifespan to 0) or emp
 
 
 ##Installation
------------
  CHMOD 777 the following folders/files:  
  `/cache/`  
  `/admin/install.php`  
@@ -39,9 +38,10 @@ once installed find admin panel here :
   `yoursite.com/admin/`  
 
 ##Documentation
------------
 
 ######Structures :
+-----------
+
  Structure of the site depends on the homepage chose from the admin.  
 
 **Latest Upload:**
@@ -63,6 +63,8 @@ once installed find admin panel here :
 </pre>
 
 ###### Templates 
+-----------
+
  default template is `positif`.
 
 **collecphotosets.php:**  
@@ -81,6 +83,8 @@ once installed find admin panel here :
  Template for the footer of every pages.
  
 ###### MVC
+-----------
+
  Slickr use a MVC structure.
 
  * `index.php` is the controller.
@@ -90,8 +94,7 @@ once installed find admin panel here :
  * `your-template/your-page.php` is your view.
  
 ## Methods
------------
-
+	
  **$core->createUrl($image,$size) :** `params : image, size`  
  Param :  
  * image `array` : the image (as an array returned from the method `$slickr->getPhotos()` you want to link to.  
