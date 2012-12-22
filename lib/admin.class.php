@@ -2,6 +2,7 @@
 class Admin{
 	private $cacheFolder = '../cache/';
 	private $configFile = '../config.php';
+	private $configFileTemp = '../config.template.php';
 	private $newConfig = array();
 	private $defaultConfig = array( 'template' => 'positif',
 									'showDesc' => 0,
@@ -76,6 +77,9 @@ class Admin{
 		return $config_install;
 	}
 	public function writeConf($content){
+		if(!file_exists($this->configFile)){
+			rename($this->configFileTemp ,$this->configFile)
+		}
 		if($this->checkRights()){
 			$f = @fopen($this->configFile,"w+"); 
 			@fputs($f,$content);

@@ -124,7 +124,7 @@ UpgradeLog*.XML
 
 # Windows image file caches
 Thumbs.db 
-
+config.php
 # Folder config file
 Desktop.ini
 

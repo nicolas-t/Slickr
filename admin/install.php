@@ -35,71 +35,74 @@ $post = array_map('htmlspecialchars',$_POST);
 			</div>
 			<div id="content">
 				<?php 
-				
-					if(!empty($post['nsid']) AND $get['a'] == 'nsid')
-					{
-						$info = getInfos($post['nsid']);
-						if($info['stat'] == 'ok' ){
-		
-								echo '<span class="gray" style="float:left;">&nbsp;Are you <span class="blue">&nbsp;'. $info['username'].$info['realname'] .'</span> ?</span>
-									<form action="install.php?a=passW" method="post">
-										<input class="input" type="hidden" name="nsid" value="'.$info['nsid'].'"/>
-										<input class="input" type="hidden" name="name" value="'.$info['username'].'"/>
-										<input type="submit" class="submit"  style="padding:8px;position:relative;top:-10px;" value="Yes &raquo;"/>
-									</form>
-									<a class="submit no" href="install.php" style="position:relative;top:-10px;font-style:normal;width:35px;" />&laquo;No</a>';
-						}
-						else{
-							echo '<form action="install.php?a=nsid" method="post">
-											<label class="blue">&nbsp;Enter your Flickr Email or NSID :
-											<input class="input" type="text" name="nsid"/></label>
-											<input type="submit" class="submit"  style="position:relative;top:-10px;" value ="Next &raquo;"/>
-											<span class="gray">&nbsp;You don\'t know how to find it ?</span><a href="http://idgettr.com/" target="_blank" class="blue">&nbsp;Try this</a>
-										</form>';
-							}
-					}
-					elseif($get['a'] == 'passW')
-					{
-						echo
-						'<form action="install.php?a=true" method="post">
-							<label class="blue">&nbsp;Username :
-							<input class="input" type="text" name="username"/></label>
-							<label class="blue">&nbsp;Password :
-							<input class="input" type="password" name="password"/></label>
-							<input class="input" type="hidden" name="nsid" value="'.$post['nsid'].'"/></label>
-							<input class="input" type="hidden" name="name" value="'.$post['name'].'"/></label>
-							<div style="width:340px;" class="gray">&nbsp;These informations will be required to connect to the administration page</div>
-							<input type="submit" class="submit"  style="position:relative;top:-35px;" value ="Next &raquo;"/>
-						</form>	';
-					}
-					elseif($get['a'] == 'true')
-					{
-						if(!empty($post['password']) AND !empty($post['username'])){
-							$settings = array('password' => md5($post['password']), 'username' => $post['username'], 'user' => $post['nsid'], 'name' => $post['name'], 'homepage' => 'latest', 'images_per_page' => 24, 'thumbs_size' => '_s', 'description' => $post['name'] . '\'s online portfolio - (slickr.net)');
-							include('../lib/admin.class.php');
-							$admin = new Admin($settings);
-							$admin->writeConf($admin->createConf());
-							 if(!@unlink('install.php')){
-								 $mess='<span class="blue" style="font-size:25px;">Don\'t forget to delete admin/install.php before contunuing.</span><br /><br />';
-							 }
-							echo $mess.'<span class="gray">YAY !<br />
-										your configuration file is <span class="blue">config.php</span>.<br /> If you forget your password add your new password (md5 hash) in this file.<br />
-										You can modify your preferences at this page <a href="./index.php" class="blue">/admin</a><br /><br />
-										<span style="font-size:25px;">Continue to your <a href="../index.php">portfolio</a>.</span>
-										</span>';
-						}
-						else{
-						
-						}
+					if(!function_exists ( "file_get_contents" )){
+						echo '<span class="gray">To install and use Slickr you need to enable the PHP function : </span><br /><em class="blue">file_get_contents()</em>';
 					}
 					else
 					{
-						echo '<form action="install.php?a=nsid" method="post">
-											<label class="blue">&nbsp;Enter your Flickr Email or NSID :
-											<input class="input" type="text" name="nsid"/></label>
-											<input type="submit" class="submit" style="position:relative;top:-10px;" value ="Next &raquo;"/>
-											<span class="gray">&nbsp;You don\'t know how to find it ?</span><a href="http://idgettr.com/" target="_blank" class="blue">&nbsp;Try this</a>
-										</form>';
+						if(!empty($post['nsid']) AND $get['a'] == 'nsid')
+						{
+							$info = getInfos($post['nsid']);
+							if($info['stat'] == 'ok' ){
+			
+									echo '<span class="gray" style="float:left;">&nbsp;Are you <span class="blue">&nbsp;'. $info['username'].$info['realname'] .'</span> ?</span>
+										<form action="install.php?a=passW" method="post">
+											<input class="input" type="hidden" name="nsid" value="'.$info['nsid'].'"/>
+											<input class="input" type="hidden" name="name" value="'.$info['username'].'"/>
+											<input type="submit" class="submit"  style="padding:8px;position:relative;top:-10px;" value="Yes &raquo;"/>
+										</form>
+										<a class="submit no" href="install.php" style="position:relative;top:-10px;font-style:normal;width:35px;" />&laquo;No</a>';
+							}
+							else{
+								echo '<form action="install.php?a=nsid" method="post">
+												<label class="blue">&nbsp;Enter your Flickr Email or NSID :
+												<input class="input" type="text" name="nsid"/></label>
+												<input type="submit" class="submit"  style="position:relative;top:-10px;" value ="Next &raquo;"/>
+												<span class="gray">&nbsp;You don\'t know how to find it ?</span><a href="http://idgettr.com/" target="_blank" class="blue">&nbsp;Try this</a>
+											</form>';
+								}
+						}
+						elseif($get['a'] == 'passW')
+						{
+							echo
+							'<form action="install.php?a=true" method="post">
+								<label class="blue">&nbsp;Username :
+								<input class="input" type="text" name="username"/></label>
+								<label class="blue">&nbsp;Password :
+								<input class="input" type="password" name="password"/></label>
+								<input class="input" type="hidden" name="nsid" value="'.$post['nsid'].'"/></label>
+								<input class="input" type="hidden" name="name" value="'.$post['name'].'"/></label>
+								<div style="width:340px;" class="gray">&nbsp;These informations will be required to connect to the administration page</div>
+								<input type="submit" class="submit"  style="position:relative;top:-35px;" value ="Next &raquo;"/>
+							</form>	';
+						}
+						elseif($get['a'] == 'true')
+						{
+							if(!empty($post['password']) AND !empty($post['username'])){
+								$settings = array('password' => md5($post['password']), 'username' => $post['username'], 'user' => $post['nsid'], 'name' => $post['name'], 'homepage' => 'latest', 'images_per_page' => 24, 'thumbs_size' => '_s', 'description' => $post['name'] . '\'s online portfolio - (slickr.net)');
+								include('../lib/admin.class.php');
+								$admin = new Admin($settings);
+								$admin->writeConf($admin->createConf());
+								$mess='<span class="blue" style="font-size:25px;">Don\'t forget to delete admin/install.php before contunuing.</span><br /><br />';
+								echo $mess.'<span class="gray">YAY !<br />
+											your configuration file is <span class="blue">config.php</span>.<br /> If you forget your password add your new password (md5 hash) in this file.<br />
+											You can modify your preferences at this page <a href="./index.php" class="blue">/admin</a><br /><br />
+											<span style="font-size:25px;">Continue to your <a href="../index.php">portfolio</a>.</span>
+											</span>';
+							}
+							else{
+							
+							}
+						}
+						else
+						{
+							echo '<form action="install.php?a=nsid" method="post">
+												<label class="blue">&nbsp;Enter your Flickr Email or NSID :
+												<input class="input" type="text" name="nsid"/></label>
+												<input type="submit" class="submit" style="position:relative;top:-10px;" value ="Next &raquo;"/>
+												<span class="gray">&nbsp;You don\'t know how to find it ?</span><a href="http://idgettr.com/" target="_blank" class="blue">&nbsp;Try this</a>
+											</form>';
+						}
 					}
 				?>
 			</div>
