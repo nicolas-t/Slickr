@@ -35,8 +35,21 @@ $post = array_map('htmlspecialchars',$_POST);
 			</div>
 			<div id="content">
 				<?php 
-					if(!function_exists ( "file_get_contents" )){
-						echo '<span class="gray">To install and use Slickr you need to enable the PHP function : </span><br /><em class="blue">file_get_contents()</em>';
+					$err = '';
+					if(!function_exists ("file_get_contents")){
+						$err .= '<span class="gray">To install and use Slickr you need to enable the PHP function : </span><br /><em class="blue">file_get_contents()</em><br />';
+					}
+					if(!is_writable('../config.template.php')){
+						$err .= '<span class="gray">The file: <em class="blue">config.template.php</em> must be writable</span><br />';
+					}
+					if(!is_writable('../cache')){
+						$err .= '<span class="gray">The folder: <em class="blue">cache/</em> must be writable</span><br />';
+					}
+					if(!is_writable('../disabled.htaccess')){
+						$err .= '<span class="gray">The file: <em class="blue">disabled.htaccess</em> must be writable</span><br />';
+					}
+					if($err){
+						echo $err.'<br /> <a class="submit yes" style="width:125px;float:none;" href="">Then reload&raquo;</a>';
 					}
 					else
 					{
@@ -83,7 +96,7 @@ $post = array_map('htmlspecialchars',$_POST);
 								include('../lib/admin.class.php');
 								$admin = new Admin($settings);
 								$admin->writeConf($admin->createConf());
-								$mess='<span class="blue" style="font-size:25px;">Don\'t forget to delete admin/install.php before contunuing.</span><br /><br />';
+								$mess='<span class="gray">Don\'t forget to delete <span class="blue" style="font-size:15px;">admin/install.php</span> before contunuing.</span><br /><br />';
 								echo $mess.'<span class="gray">YAY !<br />
 											your configuration file is <span class="blue">config.php</span>.<br /> If you forget your password add your new password (md5 hash) in this file.<br />
 											You can modify your preferences at this page <a href="./index.php" class="blue">/admin</a><br /><br />
