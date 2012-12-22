@@ -78,7 +78,7 @@ class Admin{
 	}
 	public function writeConf($content){
 		if(!file_exists($this->configFile)){
-			rename($this->configFileTemp ,$this->configFile)
+			rename($this->configFileTemp ,$this->configFile);
 		}
 		if($this->checkRights()){
 			$f = @fopen($this->configFile,"w+"); 
