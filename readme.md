@@ -28,7 +28,7 @@ You'll have to disable it from the admin panel (by setting lifespan to 0) or emp
  CHMOD 777 the following folders/files:  
  `/cache/`  
  `/admin/install.php`  
- `config.php`  
+ `config.template.php`  
  `disabled.htaccess`  
 
 run :  
