@@ -24,13 +24,19 @@ session_start();
 				}
 				else
 				{
+	
 					if($_GET['a'] == 'save')
-					{		
+					{
+					?>
+					<div class="update">
+					<?php
 						include_once('./pages/trt.php');
+					?>
+					</div>
+					<?php
 					}
-					else{
-						include_once('./pages/admin.php');
-					}
+		
+					include_once('./pages/admin.php');
 				}
 				?>
 			</div>
