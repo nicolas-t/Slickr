@@ -5,6 +5,9 @@ $admin = new Admin(array_map('htmlspecialchars',$_POST));
 
 $admin->manage();
 if($admin->writeConf($admin->createConf())){
-	echo 'Changes saved. <a href="../index.php">Go back</a><br /> In most cases it\'s recommended to empty the folder <span class="blue">/cache/</span>.';
+	echo 'Changes saved. <br /> In most cases it\'s recommended to empty the folder <em>/cache/</em>.';
+}
+else{
+	echo 'An error occured.';
 }
 ?>
