@@ -38,39 +38,39 @@ class Core
 		$this->$varName = unserialize($rsp);
 		if(count($this->{$varName}, COUNT_RECURSIVE) <= 2)//this sucks...
 		{
-			echo 'nothing found';
+			//echo 'nothing found';
 			return false;
 		}
 		else
 		{
 			if(!$this->result($this->{$varName}['stat'])){
-				echo 'nothing found';
+				//echo 'nothing found';
 			}
 			return $this->result($this->{$varName}['stat']);
 		}
 	}
 	protected function parse($a){
 		$z = array();
-		foreach ($a as $entry) {
-			$id = (string)$entry['id'];
-			$z[$id]['id'] = $id ;
-			$z[$id]['primary'] = $id ;
-			$z[$id] = $entry;
+		if($a){
+			foreach ($a as $entry) {
+				$id = (string)$entry['id'];
+				$z[$id]['id'] = $id ;
+				$z[$id]['primary'] = $id ;
+				$z[$id] = $entry;
+			}
 		}
 		return $z;
 	}
-	public function createUrl($image,$size)// image' size : _z; _t; _m; _s; _b; _biggest; or leave empty
+	public function createUrl($image,$size)
 	{
-		if(!empty($image['primary'])){$p = $image['primary'];}
-		else{$p = $image['id'];}
-
-		if($size == '_biggest'){
-			$this->getFeed('imgSizes','photos.getSizes',array('photo_id' => $image['id']));
-			$imgSize = $this->imgSizes;
-			$imgSize = array_reverse($imgSize['sizes']['size']);
-			return $imgSize[0]['source'];
+		$sizes = array('url_sq','url_t','url_s','url_q','url_m','url_n','url_z','url_c','url_l','url_o');
+		$sizes = array_reverse($sizes);
+		$k = array_search('url'.$size, $sizes);
+		for ($i = $k; $i<count($sizes); $i++){
+			if(isset($image[$sizes[$i]])){
+				return $image[$sizes[$i]];
+			}
 		}
-		return 'http://farm'.$image['farm'].'.static.flickr.com/'.$image['server'].'/'.$p.'_'.$image['secret'].''.$size.'.jpg';
 	}
 	public function getPages()
 	{
