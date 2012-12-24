@@ -2,7 +2,7 @@
 class Slickr extends Core
 {
 	public function getPhotos(){
-		$this->getFeed('img','photosets.getPhotos',array('photoset_id' => $this->id, 'extras' => 'o_dims', 'per_page' => IMAGES_PER_PAGE, 'page' => $this->p));
+		$this->getFeed('img','photosets.getPhotos',array('photoset_id' => $this->id, 'extras' => 'url_sq,url_t,url_s,url_q,url_m,url_n,url_z,url_c,url_l,url_o', 'per_page' => IMAGES_PER_PAGE, 'page' => $this->p));
 			$images = $this->parse($this->img['photoset']['photo']);
 		
 		$this->getFeed('setInfo','photosets.getInfo',array('photoset_id' => $this->id));
@@ -11,7 +11,7 @@ class Slickr extends Core
 		return array($images, $parent);
 	}
 	public function getLatestPhotos(){
-		$this->getFeed('img','people.getPublicPhotos',array('user_id' => $this->user, 'extras' => 'o_dims', 'per_page' => IMAGES_PER_PAGE, 'page' => $this->p));
+		$this->getFeed('img','people.getPublicPhotos',array('user_id' => $this->user, 'extras' => 'url_sq,url_t,url_s,url_q,url_m,url_n,url_z,url_c,url_l,url_o', 'per_page' => IMAGES_PER_PAGE, 'page' => $this->p));
 			$images = $this->parse($this->img['photos']['photo']);
 			$parent = array('title'=>'Latest Images', 'description'=>'');
 		return array($images, $parent);
