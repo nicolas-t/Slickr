@@ -1,1 +1,1 @@
-<div id="footer"><a href="http://slickr.net">slickr.net</a></div>
+﻿<footer><a href="http://slickr.net">slickr.net</a></footer>

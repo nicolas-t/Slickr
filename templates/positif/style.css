@@ -1,5 +1,49 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body{
-	background:url(images/bg.jpg) #fff repeat-x;
+	background:url(images/bg.png);
 	margin:0;
 	color:#666666;
 	font-size:12px;
@@ -9,53 +53,52 @@ a{
 	text-decoration:none;
 	color:#666666;
 }
-#container img{
-	border:1px solid white;
-	margin:10px;
-}
-#container img:hover{
-	border:1px solid gray;
-	margin:10px;
-}
 #container{
 	width:810px;
 	margin:auto;
+	background:#fff;
+	border-radius:8px;
+	padding-bottom:15px;
 }
-#header{
-	width:777px;
-	margin:auto;
+section img{
+	border:1px solid white;
+	margin:10px;
+}
+section img:hover{
+	border:1px solid white;
+	margin:10px;
+}
+section{
+padding-top:3px;
+}
+header{
 	padding-bottom:10px;
 	padding-top:15px;
-	position:relative;
-	left:-7px;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size:24px;
+	font-family: 'Poiret One', cursive;
+	font-size:28px;
+	margin:auto;
 	margin-top: 20px;
 	margin-bottom: 0px;
 	font-weight: normal;
 	color:#9f9f9f;
-	background:#fff;
+	width:810px;
+}
+header #content{
+	position:relative;
+}
+footer{
+	padding:4px 0;
+	width:810px;
+	margin:auto;
+	margin-top:15px;
 	text-align:center;
 }
-#header #content{
-	width:760px;
-	margin:auto;
-	position:relative;
-	text-align:left;
-	
+footer a{
+	color:silver;
 }
-#footer{
-	width:777px;
-	margin:auto;
-	position:relative;
-	left:-7px;
-	padding:4px;
-	margin-top:40px;
-	background:white;
-	text-align:center;
-}
-#header a{
+header a{
 	color:#9f9f9f;
+
 }
 .sub{
 	font-family: "Lucida Grande", Tahoma;
@@ -75,9 +118,6 @@ a{
 	margin-right:15px;
 }
 #collecs{
-	width:730px;
-	margin:auto;
-	
 }
 .collec{
 	float:left;
@@ -113,6 +153,9 @@ a{
 	margin-bottom:15px;
 
 }
+.photoset-desc{
+	padding:20px;
+}
 .left{
 	width:200px;
 	height:400px;
@@ -144,6 +187,9 @@ a{
 	height:120px;
 	line-height:120px;
 	text-align:center;
+}
+._q, ._q:hover{
+	margin:15px;
 }
 ._m{
 	display:inline-block;
