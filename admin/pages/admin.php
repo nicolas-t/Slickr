@@ -10,6 +10,7 @@ $trueButton = array('');
 $thumbSize = array(
 					'_s' => '75px',
 					'_t' => '100px',
+					'_q' => '150px',
 					'_m' => '240px',
 					'' => '500px',
 					'_z' => '640px',
@@ -64,6 +65,8 @@ foreach ($options as $k=>$v){
 		<input type="text" value="<?php echo (int)IMAGES_PER_PAGE; ?>" border="0" name="images_per_page" class="inputpetit"/>
 	<div class="label">Cache memory lifespan (hours) : </div>
 		<input type="text" value="<?php echo CACHE_DELAY; ?>" border="0" name="cache_delay" class="inputpetit"/>
+	<div class="label">Image cache memory lifespan (hours) : </div>
+		<input type="text" value="<?php echo CACHE_IMAGE_DELAY; ?>" border="0" name="cache_image_delay" class="inputpetit"/>
 	<div class="label">Blacklisted sets (comma separated id): </div>
 		<input type="text" value="<?php echo stripslashes(implode(",", $setBlackList)); ?>" border="0" name="setBL" class="inputpetit"/>
 	<div class="label">Blacklisted collections (comma separated id) : </div>
