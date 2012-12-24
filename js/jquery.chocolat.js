@@ -160,14 +160,13 @@
 				return false;
 			}
 			else{
-				$('#Choco_container_description').fadeTo(settings.fadeOutImageduration,0);
-				$('#Choco_bigImage').fadeTo(settings.fadeOutImageduration, 0, function(){
+				$('#Choco_container_description').css('visibility','hidden');
+				$('#Choco_bigImage').fadeOut(settings.fadeOutImageduration, function(){
 					load(settings.currentImage + parseInt(signe), false);
 				});
 			}
 		}
 		function ChoColat(hauteur_image,largeur_image,resize){
-
 			if(resize){
 				$('#Choco_container_photo, #Choco_content, #Choco_bigImage').stop(true,false).css({'overflow':'visible'});
 				$('#Choco_bigImage').animate({
@@ -184,16 +183,17 @@
 				'width' : largeur_image,
 				'marginLeft' : -largeur_image/2,
 				'marginTop' : -(hauteur_image)/2
-			},settings.fadeInImageduration, 'swing', function(){
-				$('#Choco_bigImage').fadeTo(settings.fadeInImageduration, 1).height(hauteur_image).width(largeur_image).fadeIn(settings.fadeInImageduration);
+			},settings.fadeInImageduration, function(){
+				$('#Choco_bigImage').fadeIn(settings.fadeInImageduration).height(hauteur_image).width(largeur_image);
 				if(!resize)
 				{
 					arrowsManaging();
-					$('#Choco_container_description').fadeTo(settings.fadeInImageduration,1);
+					$('#Choco_container_description').css('visibility','visible');
 					$('#Choco_close').fadeIn(settings.fadeInImageduration);
 				}
 			}).
 			css('overflow', 'visible');
+			
 		}
 		function arrowsManaging(){
 			if(settings.linkImages){

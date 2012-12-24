@@ -62,10 +62,10 @@ color:#505050;
 font-family:Tahoma;
 clear:both;
 position:relative;
-opacity:0;
 font-size:12px;
 margin-top:-5px;
 overflow:hidden;
+visibility:hidden;
 }
 #Choco_container_title{
 float:left;
@@ -74,6 +74,7 @@ padding:5px;
 #Choco_container_via{
 padding:5px;
 float:right;
+
 }
 #Choco_container_via a{
 color:gray;
