@@ -7,6 +7,8 @@ class Admin{
 	private $defaultConfig = array( 'template' => 'positif',
 									'showDesc' => 0,
 									'cache_delay' => 168,
+									'cache_image_delay' => 168,
+									'thumbs_size' => '_q',
 									'rewrite' => 0,
 									'user' => USER,
 									'name' => NAME,
@@ -61,6 +63,7 @@ class Admin{
 		$config_install .= 'define(\'TEMPLATE\',                 	\''.addslashes($array['template']).'\');' . "\n";
 		$config_install .= 'define(\'SHOW_PHOTOSET_DESCRIPTION\',  '.(int)$array['showDesc'].');' . "\n";
 		$config_install .= 'define(\'CACHE_DELAY\',                '.(int)$array['cache_delay'].');' . "\n";
+		$config_install .= 'define(\'CACHE_IMAGE_DELAY\',          '.(int)$array['cache_image_delay'].');' . "\n";
 		$config_install .= 'define(\'URL_REWRITING\',              '.(int)$array['rewrite'].');' . "\n";
 		$config_install .= 'define(\'USER\',						\''.$array['user'] .'\');' . "\n";
 		$config_install .= 'define(\'NAME\',					 	\''.addslashes($array['name']).'\');' . "\n";
