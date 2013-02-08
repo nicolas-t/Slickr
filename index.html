@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Slickr by nicolas-t</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Slickr</h1>
+        <p>Slickr: Build your own flickr portfolio</p>
+
+        <p class="view"><a href="https://github.com/nicolas-t/Slickr">View the Project on GitHub <small>nicolas-t/Slickr</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/nicolas-t/Slickr/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/nicolas-t/Slickr/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/nicolas-t/Slickr">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>Slickr</h2>
+
+<hr><p>Slickr is an easy to template module that display your flickr photos on your own server.</p>
+
+<h4>Dependencies</h4>
+
+<p>PHP 5<br>
+ jQuery. <a href="https://github.com/jquery/jquery">https://github.com/jquery/jquery</a><br>
+ Chocolat. <a href="https://github.com/nicolas-t/chocolat">https://github.com/nicolas-t/chocolat</a></p>
+
+<h4>Compatibility</h4>
+
+<p>recent browsers such as :<br>
+ IE 7+, Safari, Firefox &amp; Chrome.</p>
+
+<h4>Demo &amp; Website</h4>
+
+<p><a href="http://slickr.net/demo">http://slickr.net/demo</a><br><a href="http://slickr.net">http://slickr.net</a></p>
+
+<h4>Notes</h4>
+
+<p><strong>cache</strong><br>
+Slickr makes heavy use of cache (images are not cached).<br>
+You'll have to disable it from the admin panel (by setting lifespan to 0) or empty cache the folder after each modifications.  </p>
+
+<h2>Installation</h2>
+
+<p>CHMOD 777 the following folders/files:<br><code>/cache/</code><br><code>/admin/install.php</code><br><code>config.template.php</code><br><code>disabled.htaccess</code>  </p>
+
+<p>run :<br><code>admin/install.php</code>  </p>
+
+<p>once installed find admin panel here :<br><code>yoursite.com/admin/</code>  </p>
+
+<h2>Documentation</h2>
+
+<h6>Structures :</h6>
+
+<hr><p>Structure of the site depends on the homepage chose from the admin.  </p>
+
+<p><strong>Latest Upload:</strong></p>
+
+<pre>
+ Images  
+</pre>
+
+<p><strong>Photosets:</strong></p>
+
+<pre>
+ Photosets  
+ |--Images  
+</pre>
+
+<p><strong>Collections:</strong></p>
+
+<pre>
+ Collections  
+ |--Collecphotosets  
+    |--Images  
+</pre>
+
+<h6>Templates</h6>
+
+<hr><p>default template is <code>positif</code>.</p>
+
+<p><strong>collecphotosets.php:</strong><br>
+ Template for the photosets inside collections</p>
+
+<p><strong>collections.php:</strong><br>
+ Template for the collections.</p>
+
+<p><strong>photosets.php:</strong><br>
+ Template for the photosets.</p>
+
+<p><strong>images.php:</strong><br>
+ Template for the images.</p>
+
+<p><strong>footer.php:</strong><br>
+ Template for the footer of every pages.</p>
+
+<h6>MVC</h6>
+
+<hr><p>Slickr use a MVC structure.</p>
+
+<ul>
+<li><p><code>index.php</code> is the controller.</p></li>
+<li><p><code>slickr.class.php</code> is the model.</p></li>
+<li><p><code>your-template/your-page.php</code> is your view.</p></li>
+</ul><h2>Methods</h2>
+
+<p><strong>$core-&gt;createUrl($image,$size) :</strong> <code>params : image, size</code><br>
+ Param :  </p>
+
+<ul>
+<li>image <code>array</code> : the image (as an array returned from the method <code>$slickr-&gt;getPhotos()</code> you want to link to.<br>
+</li>
+<li>size <code>string</code> : the size of the image:
+ <dl>
+<dd>
+<code>_s</code> : 75px*75px sqsuare</dd>
+  <dd>
+<code>_t</code> : 100px on the largest side</dd>
+  <dd>
+<code>_m</code> : 240px on the largest side</dd>
+  <dd>
+<code>_z</code> : 640px on the largest side</dd>
+  <dd>
+<code>_b</code> : 1 024px on the largest side</dd>
+  <dd>
+<code>_biggest</code> : look for an original size if available, else takes the biggest size available</dd>
+</dl>
+Returns :<br>
+the url of the image<br>
+</li>
+</ul><hr><p><strong>$slickr-&gt;getPhotos() :</strong> <code>param : none</code><br>
+ Returns :  </p>
+
+<ul>
+<li>images : the photos of the current photoset</li>
+<li>parent : informations about the parent photoset (title &amp; description)</li>
+</ul><p><strong>$slickr-&gt;getLatestPhotos() :</strong> <code>param : none</code><br>
+ Returns :  </p>
+
+<ul>
+<li>images : the latest photos you uploaded on flickr</li>
+<li>parent : "Latest Images"</li>
+</ul><p><strong>$slickr-&gt;getPhotosets() :</strong> <code>param : none</code><br>
+ Returns :  </p>
+
+<ul>
+<li>collecSets : the different sets in the current collection</li>
+<li>sets : the different sets (when the homepage is set to "Photosets"</li>
+<li>parent : information about the parent collection (title)</li>
+</ul><p><strong>$slickr-&gt;getCollections() :</strong> <code>param : none</code><br>
+ Returns :  </p>
+
+<ul>
+<li>collections : the different collections (in the current collection)</li>
+<li>parent : informations about the parent (if exists) collection (title &amp; description)</li>
+</ul><hr><p><strong>$cache-&gt;saveCache($content) :</strong> <code>param : content</code><br>
+ Save to cache the html content passed as parameter<br>
+ return : true|false </p>
+
+<p><strong>$cache-&gt;getCache() :</strong> <code>param : none</code><br>
+ Show the cached content if available<br>
+ Else start generating new cache for the page.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/nicolas-t">nicolas-t</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
