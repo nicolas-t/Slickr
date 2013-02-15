@@ -8,11 +8,11 @@ if (file_get_contents('http://slickr.net/version.txt') != VERSION){
 $falseButton = array('');
 $trueButton = array('');
 $thumbSize = array(
-					'_s' => '75px',
+					'_sq' => '75px',
 					'_t' => '100px',
 					'_q' => '150px',
-					'_m' => '240px',
-					'' => '500px',
+					'_s' => '240px',
+					'_m' => '500px',
 					'_z' => '640px',
 					);
 $homepage = array(

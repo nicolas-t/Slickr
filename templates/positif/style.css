@@ -61,11 +61,9 @@ a{
 	padding-bottom:15px;
 }
 section img{
-	border:1px solid white;
 	margin:10px;
 }
 section img:hover{
-	border:1px solid white;
 	margin:10px;
 }
 section{
@@ -191,7 +189,7 @@ header a{
 ._q, ._q:hover{
 	margin:15px;
 }
-._m{
+._s{
 	display:inline-block;
 	width:260px;
 	height:260px;
@@ -202,7 +200,7 @@ header a{
 	display:inline-block;
 	width:660px;
 }
-._t img, ._m img{
+._t img, ._s img{
 	margin:0;
 	vertical-align:middle;
 }
