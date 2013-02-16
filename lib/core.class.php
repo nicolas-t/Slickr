@@ -63,7 +63,7 @@ class Core
 	}
 	public function createUrl($image,$size)
 	{
-		$sizes = array('url_sq','url_t','url_s','url_q','url_m','url_n','url_z','url_c','url_l','url_o');
+		$sizes = array('url_sq','url_t','url_q','url_s','url_n','url_m','url_z','url_c','url_l','url_o');
 		$sizes = array_reverse($sizes);
 		$k = array_search('url'.$size, $sizes);
 		for ($i = $k; $i<count($sizes); $i++){

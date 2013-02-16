@@ -12,6 +12,7 @@ $thumbSize = array(
 					'_t' => '100px',
 					'_q' => '150px',
 					'_s' => '240px',
+					'_n' => '320px',
 					'_m' => '500px',
 					'_z' => '640px',
 					);
@@ -51,12 +52,10 @@ foreach ($options as $k=>$v){
 	<div class="label">Thumbs size : </div>
 		<select border="0" name="thumbs_size" class="inputpetit"/>
 		<?php
+		$matchWith = (isset($_POST['thumbs_size'])) ? $_POST['thumbs_size'] : THUMBS_SIZE; /*constant not update on the fly...*/
 		foreach($thumbSize as $k=>$v)
 		{
-			$selected = '';
-			if($k == THUMBS_SIZE){
-				$selected = 'selected="selected"';
-			}
+			$selected = ($k == $matchWith) ? 'selected="selected"' : '';
 			echo '<option '.$selected.' value="'.$k.'">'.$v.'</option>';
 		}
 		?>
