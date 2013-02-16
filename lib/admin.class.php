@@ -17,7 +17,7 @@ class Admin{
 									'images_per_pages' => IMAGES_PER_PAGE,
 									'username' => USERNAME,
 									'password' => PASSWORD,
-									'version' => '0.5.2',
+									'version' => '0.5.3',
 									'setBL' => '',
 									'collecBL' => ''
 									);
@@ -38,7 +38,7 @@ class Admin{
 		$handle=opendir($this->cacheFolder);
 		while (false !== ($file = readdir($handle)))
 		{
-			if ($file != "." && $file != "..") {
+			if ($file != "." && $file != ".." && $file != ".gitignore") {
 				@unlink($this->cacheFolder . $file);
 			} 
 		} 
@@ -73,7 +73,7 @@ class Admin{
 		$config_install .= 'define(\'THUMBS_SIZE\',					\''.addslashes($array['thumbs_size']).'\');' . "\n";
 		$config_install .= 'define(\'USERNAME\',					\''.addslashes($array['username']) .'\');' . "\n";
 		$config_install .= 'define(\'PASSWORD\',					\''.$array['password'] .'\');' . "\n";
-		$config_install .= 'define(\'VERSION\',						\'0.5.2\');' . "\n";
+		$config_install .= 'define(\'VERSION\',						\'0.5.3\');' . "\n";
 		$config_install .= '$setBlackList = array(\''.str_replace(',', '\',\'', addslashes($array['setBL'])).'\');' . "\n";
 		$config_install .= '$collecBlackList = array(\''.str_replace(',', '\',\'', addslashes($array['collecBL'])).'\');' . "\n";
 		$config_install .= '?>'."\n";
