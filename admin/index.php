@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include_once('../config.php');
 define('INDEX', true);
 session_start();
@@ -10,7 +11,7 @@ session_start();
 		<title>Slickr Administration</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" media="screen" type="text/css" title="Design" href="style.css" />
-</head>
+	</head>
 	<body>
 		<div id="container">
 			<div class="header">

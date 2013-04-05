@@ -1,5 +1,5 @@
 <?php 
-
+error_reporting(0);
 include('lib/core.class.php');
 include('lib/slickr.class.php');
 include('lib/cache.class.php');

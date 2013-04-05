@@ -23,7 +23,7 @@
 			?>
 			<div class="set">
 				<a href="<?php echo $slickr->link('id', $set['id'], 1); ?>">
-				<img src="<?php echo $slickr->createUrl($set, '_s'); ?>" alt="<?php echo $set['title']['_content']; ?>" title="<?php echo $set['title']['_content']; ?>"/>
+				<img src="<?php echo $slickr->createUrlPhotoset($set, '_s'); ?>" alt="<?php echo $set['title']['_content']; ?>" title="<?php echo $set['title']['_content']; ?>"/>
 				</a>
 				<br /><span class="titre"><?php echo $set['title']['_content']; ?></span>
 				<br />(<?php echo $set['photos']; ?> photos)

@@ -17,7 +17,7 @@ class Admin{
 									'images_per_pages' => IMAGES_PER_PAGE,
 									'username' => USERNAME,
 									'password' => PASSWORD,
-									'version' => '0.5.3',
+									'version' => '0.5.4',
 									'setBL' => '',
 									'collecBL' => ''
 									);
@@ -73,7 +73,7 @@ class Admin{
 		$config_install .= 'define(\'THUMBS_SIZE\',					\''.addslashes($array['thumbs_size']).'\');' . "\n";
 		$config_install .= 'define(\'USERNAME\',					\''.addslashes($array['username']) .'\');' . "\n";
 		$config_install .= 'define(\'PASSWORD\',					\''.$array['password'] .'\');' . "\n";
-		$config_install .= 'define(\'VERSION\',						\'0.5.3\');' . "\n";
+		$config_install .= 'define(\'VERSION\',						\'0.5.4\');' . "\n";
 		$config_install .= '$setBlackList = array(\''.str_replace(',', '\',\'', addslashes($array['setBL'])).'\');' . "\n";
 		$config_install .= '$collecBlackList = array(\''.str_replace(',', '\',\'', addslashes($array['collecBL'])).'\');' . "\n";
 		$config_install .= '?>'."\n";

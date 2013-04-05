@@ -72,6 +72,10 @@ class Core
 			}
 		}
 	}
+	public function createUrlPhotoset($set,$size)
+	{
+		return 'http://farm'.$set[farm].'.static.flickr.com/'.$set[server].'/'.$set[primary].'_'.$set[secret].$size.'.jpg';
+	}
 	public function getPages()
 	{
 		$r = '';
