@@ -53,10 +53,10 @@ class Core
 		$z = array();
 		if($a){
 			foreach ($a as $entry) {
-				$id = (string)$entry['id'];
-				$z[$id]['id'] = $id ;
+				$id                = (string)$entry['id'];
+				$z[$id]['id']      = $id ;
 				$z[$id]['primary'] = $id ;
-				$z[$id] = $entry;
+				$z[$id]            = $entry;
 			}
 		}
 		return $z;

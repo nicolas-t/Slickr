@@ -9,17 +9,17 @@ $falseButton = array('');
 $trueButton = array('');
 $thumbSize = array(
 					'_sq' => '75px',
-					'_t' => '100px',
-					'_q' => '150px',
-					'_s' => '240px',
-					'_n' => '320px',
-					'_m' => '500px',
-					'_z' => '640px',
+					'_t'  => '100px',
+					'_q'  => '150px',
+					'_s'  => '240px',
+					'_n'  => '320px',
+					'_m'  => '500px',
+					'_z'  => '640px',
 					);
 $homepage = array(
-					'latest' => 'Latest Uploads',
+					'latest'      => 'Latest Uploads',
 					'collections' => 'Collections',
-					'photosets' => 'Photosets',
+					'photosets'   => 'Photosets',
 					);
 $options = array(SHOW_PHOTOSET_DESCRIPTION, URL_REWRITING);
 foreach ($options as $k=>$v){

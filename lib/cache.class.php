@@ -1,9 +1,9 @@
 <?php
 class Cache{
-	private $cacheFolder = 'cache';
+	private $cacheFolder      = 'cache';
 	private $cacheImageFolder = 'cache-images';
-	private $delayImage = CACHE_IMAGE_DELAY;
-	private $delay = CACHE_DELAY;
+	private $delayImage       = CACHE_IMAGE_DELAY;
+	private $delay            = CACHE_DELAY;
 	private $name;
 
 	public function __construct($adress)
