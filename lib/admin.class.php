@@ -61,20 +61,20 @@ class Admin{
 		$array = array_merge($this->defaultConfig, $this->newConfig);
 
 		$config_install = '<?php'."\n";
-		$config_install .= 'define(\'TEMPLATE\',                 \''.addslashes($array['template']).'\');' . "\n";
-		$config_install .= 'define(\'SHOW_PHOTOSET_DESCRIPTION\',  '.(int)$array['showDesc'].');' . "\n";
-		$config_install .= 'define(\'CACHE_DELAY\',                '.(int)$array['cache_delay'].');' . "\n";
-		$config_install .= 'define(\'CACHE_IMAGE_DELAY\',          '.(int)$array['cache_image_delay'].');' . "\n";
-		$config_install .= 'define(\'URL_REWRITING\',              '.(int)$array['rewrite'].');' . "\n";
+		$config_install .= 'define(\'TEMPLATE\',                  \''.addslashes($array['template']).'\');' . "\n";
+		$config_install .= 'define(\'SHOW_PHOTOSET_DESCRIPTION\',   '.(int)$array['showDesc'].');' . "\n";
+		$config_install .= 'define(\'CACHE_DELAY\',                 '.(int)$array['cache_delay'].');' . "\n";
+		$config_install .= 'define(\'CACHE_IMAGE_DELAY\',           '.(int)$array['cache_image_delay'].');' . "\n";
+		$config_install .= 'define(\'URL_REWRITING\',               '.(int)$array['rewrite'].');' . "\n";
 		$config_install .= 'define(\'USER\',                      \''.$array['user'] .'\');' . "\n";
 		$config_install .= 'define(\'NAME\',                      \''.addslashes($array['name']).'\');' . "\n";
 		$config_install .= 'define(\'DESC\',                      \''.addslashes($array['description']).'\');' . "\n";
-		$config_install .= 'define(\'IMAGES_PER_PAGE\',            '.(int)$array['images_per_page'].');' . "\n";
+		$config_install .= 'define(\'IMAGES_PER_PAGE\',             '.(int)$array['images_per_page'].');' . "\n";
 		$config_install .= 'define(\'HOMEPAGE\',                  \''.addslashes($array['homepage']).'\');' . "\n";
 		$config_install .= 'define(\'THUMBS_SIZE\',               \''.addslashes($array['thumbs_size']).'\');' . "\n";
 		$config_install .= 'define(\'USERNAME\',                  \''.addslashes($array['username']) .'\');' . "\n";
 		$config_install .= 'define(\'PASSWORD\',                  \''.$array['password'] .'\');' . "\n";
-		$config_install .= 'define(\'VERSION\',                   \'0.5.4\');' . "\n";
+		$config_install .= 'define(\'VERSION\',                    \'0.5.4\');' . "\n";
 		$config_install .= '$setBlackList = array(\''.str_replace(',', '\',\'', addslashes($array['setBL'])).'\');' . "\n";
 		$config_install .= '$collecBlackList = array(\''.str_replace(',', '\',\'', addslashes($array['collecBL'])).'\');' . "\n";
 		$config_install .= '?>'."\n";
