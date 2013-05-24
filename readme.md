@@ -20,7 +20,7 @@ recent browsers such as :
  
 #### Notes
 **cache**  
-Slickr makes heavy use of cache (images are not cached).   
+Slickr makes heavy use of cache (images & markup).   
 You'll have to disable it from the admin panel (by setting lifespan to 0) or empty cache the folder after each modifications.  
 
 
