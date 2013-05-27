@@ -21,12 +21,6 @@ $homepage = array(
 					'collections' => 'Collections',
 					'photosets'   => 'Photosets',
 					);
-$options = array(SHOW_PHOTOSET_DESCRIPTION, URL_REWRITING);
-foreach ($options as $k=>$v){
-	if($v){$trueButton[$k] = 'checked';}
-	else{$falseButton[$k] = 'checked';}
-}
-
 ?>
 <form action="index.php?a=save" method="post">
 	
@@ -39,10 +33,11 @@ foreach ($options as $k=>$v){
 	<div class="label">Homepage : </div>
 		<select border="0" name="homepage" class="inputpetit"/>
 		<?php
+		$matchHompage = (isset($_POST['homepage'])) ? $_POST['homepage'] : HOMEPAGE;
 		foreach($homepage as $k=>$v)
 		{
 			$selected = '';
-			if($k == HOMEPAGE){
+			if($k == $matchHompage){
 				$selected = 'selected="selected"';
 			}
 			echo '<option '.$selected.' value="'.$k.'">'.$v.'</option>';
@@ -52,10 +47,10 @@ foreach ($options as $k=>$v){
 	<div class="label">Thumbs size : </div>
 		<select border="0" name="thumbs_size" class="inputpetit"/>
 		<?php
-		$matchWith = (isset($_POST['thumbs_size'])) ? $_POST['thumbs_size'] : THUMBS_SIZE; /*constant not update on the fly...*/
+		$matchThumbSize = (isset($_POST['thumbs_size'])) ? $_POST['thumbs_size'] : THUMBS_SIZE;
 		foreach($thumbSize as $k=>$v)
 		{
-			$selected = ($k == $matchWith) ? 'selected="selected"' : '';
+			$selected = ($k == $matchThumbSize) ? 'selected="selected"' : '';
 			echo '<option '.$selected.' value="'.$k.'">'.$v.'</option>';
 		}
 		?>
@@ -70,14 +65,37 @@ foreach ($options as $k=>$v){
 		<input type="text" value="<?php echo stripslashes(implode(",", $setBlackList)); ?>" border="0" name="setBL" class="inputpetit"/>
 	<div class="label">Blacklisted collections (comma separated id) : </div>
 		<input type="text" value="<?php echo stripslashes(implode(",", $collecBlackList)); ?>" border="0" name="collecBL" class="inputpetit"/>
-	<br /><div class="label" style="display:inline;">Show photoset description: </div>
-		<input type="radio" name="showDesc" <?php echo $trueButton[0]; ?> value="1" id="true" /> Yes
-		<input type="radio" name="showDesc"<?php echo $falseButton[0]; ?> value="0" id="false" /> No
+	<br />
+	<div class="label" style="display:inline;">Show photoset description: </div>
+		<?php
+		$matchShowDesc = (isset($_POST['showDesc'])) ? $_POST['showDesc'] : SHOW_PHOTOSET_DESCRIPTION;
+		if($matchShowDesc){
+			$trueButtonShowDesc = 'checked = "checked"';
+			$falseButtonShowDesc = '';
+		}
+		else{
+			$falseButtonShowDesc = 'checked = "checked"';
+			$trueButtonShowDesc = '';
+		}
+		?>
+		<input type="radio" name="showDesc" <?php echo $trueButtonShowDesc; ?> value="1" id="true" /> Yes
+		<input type="radio" name="showDesc"<?php echo $falseButtonShowDesc; ?> value="0" id="false" /> No
 		<br />
 		<br />
 	<div class="label" style="display:inline;">Enable url_rewriting: </div>
-		<input type="radio" name="rewrite" <?php echo $trueButton[1]; ?> value="1" id="true" /> Yes
-		<input type="radio" name="rewrite" <?php echo $falseButton[1]; ?> value="0" id="false" /> No
+		<?php
+		$matchRewrite = (isset($_POST['rewrite'])) ? $_POST['rewrite'] : URL_REWRITING;
+		if($matchRewrite){
+			$trueButtonRewrite = 'checked = "checked"';
+			$falseButtonRewrite = '';
+		}
+		else{
+			$falseButtonRewrite = 'checked = "checked"';
+			$trueButtonRewrite = '';
+		}
+		?>
+		<input type="radio" name="rewrite" <?php echo $trueButtonRewrite; ?> value="1" id="true" /> Yes
+		<input type="radio" name="rewrite" <?php echo $falseButtonRewrite; ?> value="0" id="false" /> No
 		<input type="hidden" name="act" value="set"/>
 
 		<input type="submit" value="Submit" border="0" class="submit" style="margin-top:-20px;margin-right:-10px;"/>
