@@ -19,7 +19,7 @@
 	if(!empty($slickr->collecSet['collections']['collection'][0]['description']) AND SHOW_PHOTOSET_DESCRIPTION)
 	{
 	?>
-		<section class="photoset-desc"><?php echo ' . $slickr->collecSet['collections']['collection'][0]['description'] . '; ?></section>
+		<section class="photoset-desc"><?php echo $slickr->collecSet['collections']['collection'][0]['description']; ?></section>
 	<?php
 	}
 	?>
@@ -32,7 +32,7 @@
 			?>
 			<div class="set">
 				<a href="<?php echo $slickr->link('id', $collecSet['id'], 1); ?>">
-					<img src="<?php echo $slickr->createUrl($sets[(string)$collecSet['id']], '_s'); ?>" alt="<?php echo $collecSet['title']; ?>" title="<?php echo $collecSet['title']; ?>"/>
+					<img src="<?php echo $slickr->createUrlPhotoset($sets[(string)$collecSet['id']], '_s'); ?>" alt="<?php echo $collecSet['title']; ?>" title="<?php echo $collecSet['title']; ?>"/>
 				</a><br />
 				<span class="titre"><?php echo $collecSet['title']; ?></span><br />
 				(<?php echo $sets[(string)$collecSet['id']]['photos']; ?> photos)
