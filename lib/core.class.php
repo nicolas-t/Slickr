@@ -34,7 +34,7 @@ class Core
 	protected function getFeed($varName,$methode,$params)
 	{
 		foreach($params as $b=>$c){$d.='&'.$b.'='.$c;}
-		$rsp = file_get_contents('http://api.flickr.com/services/rest/?method=flickr.'.$methode.'&api_key=802be55ee2af5512f2b3e7962acc45f5'.$d.'&format=php_serial');
+		$rsp = file_get_contents('https://api.flickr.com/services/rest/?method=flickr.'.$methode.'&api_key=802be55ee2af5512f2b3e7962acc45f5'.$d.'&format=php_serial');
 		$this->$varName = unserialize($rsp);
 		if(count($this->{$varName}, COUNT_RECURSIVE) <= 2)//this sucks...
 		{

@@ -13,7 +13,7 @@
 <body>
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
-			$('.choco a').Chocolat({user : '<?php echo USER; ?>'});
+			$('.choco').Chocolat();
 		});
 	</script>
 	<header>
@@ -32,12 +32,12 @@
 		}
 		?>
 		<section style="text-align:center;">
-			<div class="choco" >
+			<div class="choco">
 				<?php
 				foreach($images as $image)
 				{
 				?>
-					<a rel="<?php echo $parent['title']; ?>" href="<?php echo $slickr->createUrl($image, '_l'); ?>" class="frame <?php echo THUMBS_SIZE; ?>" rev="<?php echo $image['id']; ?>" title="<?php echo $image['title']; ?>">
+					<a rel="<?php echo $parent['title']; ?>" href="<?php echo $slickr->createUrl($image, '_l'); ?>" class="chocolat-image frame <?php echo THUMBS_SIZE; ?>" title="<?php echo $image['title']; ?>">
 						 <img src="<?php echo $cache->getImage($slickr->createUrl($image, THUMBS_SIZE)); ?>" alt="<?php echo $image['title']; ?>" /> 
 					</a>
 				<?php

@@ -1,8 +1,10 @@
 <?php
+error_reporting(0);
+
 function getFeed($methode,$params)
 {
 	foreach($params as $b=>$c){$d.='&'.$b.'='.$c;}
-	$rsp = file_get_contents('http://api.flickr.com/services/rest/?method=flickr.'.$methode.'&api_key=802be55ee2af5512f2b3e7962acc45f5'.$d.'&format=php_serial');
+	$rsp = file_get_contents('https://api.flickr.com/services/rest/?method=flickr.'.$methode.'&api_key=802be55ee2af5512f2b3e7962acc45f5'.$d.'&format=php_serial');
 	$b = unserialize($rsp);
 	return $b;
 }

@@ -10,7 +10,9 @@
 <body>
 	<header>
 		<div id="content">
-			<a href="index.php"><?php echo stripslashes(NAME) .'  <span class="sub">&raquo; '.$parent['title']; ?></a></span>
+			<a href="index.php">
+				<?php echo stripslashes(NAME) .'  <span class="sub">&raquo; '.$parent['title']; ?>
+			</a>
 		</div>
 	</header>
 	<div id="container">
@@ -19,7 +21,9 @@
 	if(!empty($slickr->collecSet['collections']['collection'][0]['description']) AND SHOW_PHOTOSET_DESCRIPTION)
 	{
 	?>
-		<section class="photoset-desc"><?php echo $slickr->collecSet['collections']['collection'][0]['description']; ?></section>
+		<section class="photoset-desc">
+			<?php echo $slickr->collecSet['collections']['collection'][0]['description']; ?>
+		</section>
 	<?php
 	}
 	?>
