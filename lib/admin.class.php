@@ -18,7 +18,7 @@ class Admin{
 			'images_per_pages'  => IMAGES_PER_PAGE,
 			'username'          => USERNAME,
 			'password'          => PASSWORD,
-			'version'           => '0.5.4',
+			'version'           => '0.5.5',
 			'setBL'             => '',
 			'collecBL'          => ''
 	);
