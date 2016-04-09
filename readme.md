@@ -12,10 +12,6 @@ Slickr is an easy to template module that displays your flickr photos on your ow
 recent browsers such as :  
  IE 7+, Safari, Firefox & Chrome.
 
- 
-#### Demo & Website
- http://slickr.net/demo  
- http://slickr.net
 
  
 #### Notes
