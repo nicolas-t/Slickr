@@ -1,4 +1,4 @@
-﻿##Slickr
+﻿## Slickr
 -----------
 Slickr is an easy to template module that displays your flickr photos on your own server.
 
@@ -20,7 +20,7 @@ Slickr makes heavy use of cache (images & markup).
 You'll have to disable it from the admin panel (by setting lifespan to 0) or empty cache the folder after each modifications.  
 
 
-##Installation
+## Installation
  CHMOD 755 the following folders/files:  
  `/cache/`  
  `/admin/install.php`  
@@ -33,9 +33,9 @@ run :
 once installed find admin panel here :  
   `yoursite.com/admin/`  
 
-##Documentation
+## Documentation
 
-######Structures :
+###### Structures :
 -----------
 
  Structure of the site depends on the homepage chose from the admin.  
